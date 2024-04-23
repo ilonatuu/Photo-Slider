@@ -1,0 +1,136 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #131313;
+}
+
+body{
+    margin: 107px 134px;
+}
+
+.main--section-headings-wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 623px;
+    float: left;
+    margin-bottom: 45px;
+}
+
+.main--section-heading{
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    display: inline;
+}
+
+.grey-heading{
+    color: #FFFFFF;
+    opacity: 0.3;
+}
+.active-heading{
+    color: #E3B873;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.main--article1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main--article-fig{
+    display: inline;
+    width: 679px;
+}
+
+.main--article-section1{
+    width: 442px;
+    margin-right: 50px;
+    margin-top: 69px;
+}
+
+.main--article-section2{
+    width: 679px;
+}
+.main--article-heading-wrap{
+    width: 253px;
+}
+.main--article-heading{
+    font-size: 27px;
+    color: #E3B873;
+    line-height: 138%;
+    margin-bottom: 34px;
+}
+.main--article-hr{
+    color: #E3B873;
+}
+.main--article-info-para{
+    color: #FFFFFF;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 191%;
+    margin-bottom: 42px;
+}
+
+.main--article-heading-info-wrap{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.main--article-heading-info-wrap h4{
+    color: #E3B873;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 9px;
+}
+.info-1{
+    padding-bottom: 34px;
+    text-align: left;
+}
+.info-1 p{
+    color: #FFFFFF;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: 13px;
+}
+
+.prev-button-arrow,
+.circle-button-1,
+.circle-button-2,
+.circle-button-3,
+.next-button-arrow,
+.city-button1,
+.city-button2,
+.city-button3{
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.arrow-circle-wrap{
+    align-items: center;
+    margin-top: 45px;
+}
+.circle{
+    height: 9.5px;
+    margin-right: 17.5px;
+}
+.circle-last{
+    height: 9.5px;
+    margin-right: 29.5px;
+}
+.arrow{
+    height: 13.2px;
+    margin-right: 29.5px;
+}
