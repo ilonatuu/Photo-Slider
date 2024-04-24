@@ -9,7 +9,8 @@ const entities = [
         circle1: "images/selected_circle.svg",
         circle2: "images/grey_circle.svg",
         circle3: "images/grey_circle.svg",
-        headingId: "id1"
+        headingId: "id1",
+        circleId: "circle1"
     },
     {
         cityLine1: "Sochi",
@@ -21,7 +22,8 @@ const entities = [
         circle1: "images/grey_circle.svg",
         circle2: "images/selected_circle.svg",
         circle3: "images/grey_circle.svg",
-        headingId: "id2"
+        headingId: "id2",
+        circleId: "circle2"
     },
     {
         cityLine1: "Rostov-on-Don",
@@ -33,7 +35,8 @@ const entities = [
         circle1: "images/grey_circle.svg",
         circle2: "images/grey_circle.svg",
         circle3: "images/selected_circle.svg", 
-        headingId: "id3"
+        headingId: "id3",
+        circleId: "circle3"
     },
 ]
 
@@ -67,7 +70,6 @@ const updateHeadingCss = (index) => {
 
     const headings = document.querySelectorAll(".main--section-heading")
 
-
     headings.forEach( heading => {
         heading.classList.remove("active-heading")
         heading.classList.add("grey-heading")
@@ -75,10 +77,7 @@ const updateHeadingCss = (index) => {
 
     const selectedHeading = document.getElementById(headingId)
     selectedHeading.classList.add("active-heading")
-    
 }
-
-
 
 const prevArrow = document.querySelector(".prev-button-arrow")
 const nextArrow = document.querySelector(".next-button-arrow")
@@ -104,39 +103,41 @@ nextArrow.addEventListener("click", () => {
 })
 
 
-circle1.addEventListener("click", () =>{
-    currentIndex = 0;
-    setEntity(currentIndex)
-    updateHeadingCss(currentIndex)
+const allCircleButtons = document.querySelectorAll(".button-round")
+
+const circleButtonClick = (index) => {
+    const allCircleImg = document.querySelectorAll(".circle")
+
+    const circleId = entities[index].circleId
+
+    allCircleImg.forEach( circleImg => {
+        circleImg.src = "images/grey_circle.svg"
+    })
+
+    const selectedCircle = document.getElementById(circleId)
+    selectedCircle.src = "images/selected_circle.svg"
+}
+
+
+allCircleButtons.forEach(button => {
+    button.addEventListener("click", () =>{
+        const buttonIndex = button.getAttribute("data-index")
+        circleButtonClick(parseInt(buttonIndex))
+        setEntity(buttonIndex)
+        updateHeadingCss(buttonIndex)
+    })
 })
 
-circle2.addEventListener("click", () =>{
-    currentIndex = 1;
-    setEntity(currentIndex)
-    updateHeadingCss(currentIndex)
-})
-
-circle3.addEventListener("click", () =>{
-    currentIndex = 2;
-    setEntity(currentIndex)
-    updateHeadingCss(currentIndex)
-})
 
 
-cityButton1.addEventListener("click", () =>{
-    currentIndex = 0;
-    setEntity(currentIndex)
-    updateHeadingCss(currentIndex)
-})
 
-cityButton2.addEventListener("click", () =>{
-    currentIndex = 1;
-    setEntity(currentIndex)
-    updateHeadingCss(currentIndex)
-})
+const allCityButtons = document.querySelectorAll(".button-city")
 
-cityButton3.addEventListener("click", () =>{
-    currentIndex = 2;
-    setEntity(currentIndex)
-    updateHeadingCss(currentIndex)
+allCityButtons.forEach(button => {
+    button.addEventListener("click", () =>{
+        const buttonIndex = button.getAttribute("data-index")
+        circleButtonClick(parseInt(buttonIndex))
+        setEntity(buttonIndex)
+        updateHeadingCss(buttonIndex)
+    })
 })
